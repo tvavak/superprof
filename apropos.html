@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math-Passion | Infos </title>
+<link rel="stylesheet" href="style1.css">
+<link rel="icon" type="image/png" href="imgmath.png">
+</head>
+<body>
+  <header>
+    <div class="math-symbols" id="mathSymbols"></div>
+    <div class="container">
+      <nav>
+        <img src="imgmath.png" width="100px" alt="logo mathematiques-passion" />
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="apropos.html">Infos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-title">
+    <div class="container">
+      <h1>À propos de Mathématiques Passion</h1>
+      <p>Découvrez notre histoire et notre passion</p>
+    </div>
+  </section>
+
+  <section class="main-content">
+    <div class="container">
+      <div class="about-section">
+        <div class="about-text">
+          <h2>Notre mission</h2>
+          <p>Chez Mathématiques Passion, notre mission est de rendre les mathématiques accessibles, compréhensibles et passionnantes pour tous. Nous croyons que chaque individu a le potentiel de maîtriser les mathématiques et d'en apprécier la beauté.</p>
+          <p>Notre approche pédagogique unique combine des méthodes d'enseignement éprouvées avec des technologies innovantes pour offrir une expérience d'apprentissage engageante et efficace.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://www.cdn.acadomia.fr/wp-content/uploads/2021/12/enseignant-maths-college-acadomia-copyright.jpg?w=610" alt="Tableau noir avec des équations mathématiques" width="600" height="400">
+        </div>
+      </div>
+
+      <h2>Notre histoire</h2>
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>2010</h3>
+            <p>Fondation de Mathématiques Passion par le Dr. Marie Dubois, passionnée de mathématiques et d'enseignement.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h3>2013</h3>
+            <p>Lancement de notre premier programme de tutorat en ligne, élargissant notre portée au-delà de notre localité.</p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>2016</h3>
+            <p>Développement de notre plateforme d'apprentissage interactive, intégrant des outils de visualisation mathématique avancés.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <h3>2019</h3>
+            <p>Ouverture de notre premier centre d'apprentissage physique, combinant tutorat en personne et ressources numériques.</p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <h3>2022</h3>
+            <p>Lancement de notre programme de formation pour enseignants, partageant notre méthodologie avec les écoles du monde entier.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Mathématiques Passion. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+    const mathSymbols = ['∑', '∫', 'π', '√', '∞', '≈', '≠', '∈', '∀', '∃', 'Δ', '∇', '∂', 'α', 'β', 'γ', 'λ', 'θ'];
+    const symbolsContainer = document.getElementById('mathSymbols');
+
+    function createSymbol() {
+      const symbol = document.createElement('div');
+      symbol.classList.add('math-symbol');
+      symbol.textContent = mathSymbols[Math.floor(Math.random() * mathSymbols.length)];
+      symbol.style.left = `${Math.random() * 100}%`;
+      symbol.style.animationDuration = `${Math.random() * 5 + 5}s`;
+      symbol.style.animationDelay = `${Math.random() * 5}s`;
+      symbolsContainer.appendChild(symbol);
+
+      symbol.addEventListener('animationend', () => {
+        symbolsContainer.removeChild(symbol);
+        createSymbol();
+      });
+    }
+
+    for (let i = 0; i < 20; i++) {
+      createSymbol();
+    }
+  </script>
+</body>
+</html>
